@@ -1,3 +1,13 @@
-<h2 id="title">Welcome to Ember</h2>
+<AnimatedTools />
 
-{{outlet}}
+<h2 id="title">Ember Animated Container</h2>
+
+<button type="button"  {{on 'click' this.toggleComponentName}}>Change</button>
+
+<AnimatedContainer @motion={{this.motion}} style="background:#EFEFEF">
+  {{#animated-value this.componentName use=this.transition duration=2000 as |name|}}
+    {{component name}}
+  {{/animated-value}}
+</AnimatedContainer>
+
+<p>Content below</p>
